@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div
-      className={`min-h-screen w-full flex justify-center transition-colors duration-1000 ${theme === "dark" ? "bg-[#0E1011]" : "ios-light-bg"
+      className={`min-h-screen w-full flex justify-center transition-colors duration-1000 ${theme === "dark" ? "ios-dark-bg" : "ios-light-bg"
         }`}
     >
       <Main />

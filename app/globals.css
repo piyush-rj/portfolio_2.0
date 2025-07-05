@@ -84,3 +84,9 @@ body {
   background-size: 400% 400%;
   animation: gradient-move 15s ease infinite;
 }
+
+.ios-dark-bg {
+  background: linear-gradient(-45deg, #06060a, #0c0c13, #000000, #0e0505);
+  background-size: 400% 400%;
+  animation: gradient-move 15s ease infinite;
+}

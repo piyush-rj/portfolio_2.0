@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "@/svgs/allSvg";
 import { useTheme } from "@/lib/zustand";
-import { Github, Wifi } from "lucide-react";
+import { Github, Wifi, WifiOff } from "lucide-react";
 
 const projects = [
     {
@@ -13,13 +13,15 @@ const projects = [
         image: "/images/bytewords.png",
         githubUrl: "https://github.com/piyush-rj/blog-website",
         liveUrl: "https://bytewords-pi.vercel.app",
+        techStack: ["ReactJS", "Tailwind", "JavaScript", "PostgreSQL", "Docker"],
     },
     {
         title: "Soldrop",
         description: "Solana Faucet for Devs",
-        image: "/images/soldrop.png",
+        image: "/soldrop.png",
         githubUrl: "https://github.com/piyush-rj/SolDrop",
         liveUrl: "https://soldrop-ashen.vercel.app",
+        techStack: ["Solana", "Next.js", "Tailwind", "TypeScript"],
     },
     {
         title: "NexWallet",
@@ -27,12 +29,14 @@ const projects = [
         image: "/images/nexWallet.png",
         githubUrl: "https://github.com/piyush-rj/Wallet-HD",
         liveUrl: "https://nexwallet-pink.vercel.app",
+        techStack: ["NextJS", "Solana", "TypeScript", "Tailwind"],
     },
     {
         title: "PayTM Adv",
         description: "UPI Web-App",
         image: "/images/paytm.png",
-        githubUrl: "https://github.com/piyush-rj/paytm-adv"
+        githubUrl: "https://github.com/piyush-rj/paytm-adv",
+        techStack: ["React", "Express", "PostgreSQL", "TypeScript", "UPI", "Node.js"],
     },
     {
         title: "Portfolio",
@@ -40,11 +44,13 @@ const projects = [
         image: "/portfolio.png",
         githubUrl: "https://github.com/piyush-rj/portfolio_2.0",
         liveUrl: "https://piyush-nine-zeta.com",
+        techStack: ["Next.js", "Tailwind", "GSAP", "TypeScript"],
     },
 ];
 
 export default function Projects() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showStack, setShowStack] = useState(false);
     const ref = useRef(null);
     const isInView = useInView(ref, { margin: "-20% 0px -20% 0px" });
     const { theme } = useTheme();
@@ -67,59 +73,44 @@ export default function Projects() {
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className={`absolute inset-0 z-0 backdrop-blur-2xl ${theme === "dark"
-                    ? "bg-gradient-to-br from-[#1d0530] via-[#0c0c0c] to-[#000]"
-                    : "bg-gradient-to-br from-[#450d708a] via-[#450d708a] to-[#d2d2d2]"
+                        ? "bg-gradient-to-br from-[#1d0530] via-[#0c0c0c] to-[#000]"
+                        : "bg-gradient-to-br from-[#450d708a] via-[#450d708a] to-[#d2d2d2]"
                     }`}
             />
 
             <div
                 className={`relative z-10 font-sans text-white p-4 sm:p-6 md:p-10 rounded-[36px] ${theme === "dark"
-                    ? "bg-black/40 border border-white/10"
-                    : "bg-white/60 border border-black/10 text-black"
+                        ? "bg-black/40 border border-white/10"
+                        : "bg-white/60 border border-black/10 text-black"
                     }`}
             >
-                <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center mb-6">
+                <div className="flex justify-between items-start mb-6">
                     <span
-                        className={`tracking-wider text-sm md:text-base ${theme === "dark" ? "text-neutral-100" : "text-black"}`}
+                        className={`tracking-wider text-sm md:text-base ${theme === "dark" ? "text-neutral-100" : "text-black"
+                            }`}
                     >
                         PROJECTS
                     </span>
 
-                    <div className="flex flex-col gap-1 sm:items-end text-sm md:text-base max-w-full sm:max-w-sm">
-                        <div className="flex items-center flex-wrap gap-2 font-medium">
-                            <span>{currentProject.title}</span>
-
-                            {currentProject.title !== "PayTM Adv" && (
-                                <>
-                                    {currentProject.githubUrl && (
-                                        <a
-                                            href={currentProject.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:opacity-70 transition"
-                                        >
-                                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                                        </a>
-                                    )}
-                                    {currentProject.liveUrl && (
-                                        <a
-                                            href={currentProject.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:opacity-70 transition"
-                                        >
-                                            <Wifi className="w-4 h-4 sm:w-5 sm:h-5" />
-                                        </a>
-                                    )}
-                                </>
-                            )}
-                        </div>
-                        <span className={`${theme === "dark" ? "text-neutral-200" : "text-black"}`}>
-                            {currentProject.description}
-                        </span>
+                    <div
+                        className={`text-sm md:text-base font-medium ${theme === "dark" ? "text-neutral-200" : "text-black"
+                            }`}
+                    >
+                        {currentProject.title}
                     </div>
                 </div>
 
+                {/* Hide description on mobile */}
+                <div className="hidden sm:flex -mt-4 mb-4 sm:justify-end">
+                    <span
+                        className={`text-sm ${theme === "dark" ? "text-neutral-200" : "text-black"
+                            }`}
+                    >
+                        {currentProject.description}
+                    </span>
+                </div>
+
+                {/* Image and Navigation */}
                 <div className="relative w-full flex items-center justify-center">
                     {currentIndex > 0 && (
                         <motion.button
@@ -148,15 +139,116 @@ export default function Projects() {
                         initial={{ opacity: 0.2, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="w-full overflow-hidden rounded-[32px] border border-neutral-300"
+                        className="w-full flex flex-col items-center overflow-hidden rounded-[32px] border border-neutral-300"
                     >
                         <img
                             src={currentProject.image}
                             alt={currentProject.title}
-                            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover object-top rounded-[32px] shadow-lg"
+                            className="w-full h-[280px] sm:h-[400px] md:h-[580px] object-cover object-top rounded-[32px] shadow-lg"
                             draggable={false}
                         />
                     </motion.div>
+                </div>
+
+                {/* GitHub, Wifi, and Show Stack button (mobile only) */}
+                <div className="sm:hidden flex items-center justify-between px-4 mt-3">
+                    <button
+                        onClick={() => setShowStack((prev) => !prev)}
+                        className={`text-sm px-3 py-1 rounded-full border font-medium ${theme === "dark"
+                                ? "bg-white/10 text-white border-white/20"
+                                : "bg-black/10 text-black border-black/20"
+                            }`}
+                    >
+                        {showStack ? "Hide Stack" : "Show Stack"}
+                    </button>
+
+                    <div className="flex gap-3">
+                        {currentProject.githubUrl && (
+                            <a
+                                href={currentProject.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-70 transition"
+                            >
+                                <Github className="w-5 h-5" />
+                            </a>
+                        )}
+                        {currentProject.title === "PayTM Adv" ? (
+                            <WifiOff className="w-5 h-5 opacity-60" />
+                        ) : (
+                            currentProject.liveUrl && (
+                                <a
+                                    href={currentProject.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:opacity-70 transition"
+                                >
+                                    <Wifi className="w-5 h-5" />
+                                </a>
+                            )
+                        )}
+                    </div>
+                </div>
+
+                {/* Tech Stack (mobile toggle) */}
+                {showStack && (
+                    <div className="sm:hidden mt-3 px-4 flex flex-wrap gap-2">
+                        {currentProject.techStack?.map((tech) => (
+                            <span
+                                key={tech}
+                                className={`px-3 py-1 text-sm rounded-full font-medium ${theme === "dark"
+                                        ? "bg-white/10 text-white border border-white/20"
+                                        : "bg-black/10 text-black border border-black/20"
+                                    }`}
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+                )}
+
+                {/* Tech stack + icons (desktop only) */}
+                <div className="hidden sm:flex mt-6 items-center justify-between gap-4 px-4">
+                    <div className="flex flex-wrap gap-2">
+                        {currentProject.techStack?.map((tech) => (
+                            <span
+                                key={tech}
+                                className={`px-3 py-1 text-sm rounded-full font-medium ${theme === "dark"
+                                        ? "bg-white/10 text-white border border-white/20"
+                                        : "bg-black/10 text-black border border-black/20"
+                                    }`}
+                            >
+                                {tech}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div className="flex gap-3">
+                        {currentProject.githubUrl && (
+                            <a
+                                href={currentProject.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-70 transition"
+                            >
+                                <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+                            </a>
+                        )}
+                        {currentProject.title === "PayTM Adv" ? (
+                            <WifiOff className="w-5 h-5 sm:w-6 sm:h-6 opacity-60" />
+                        ) : (
+                            currentProject.liveUrl && (
+                                <a
+                                    href={currentProject.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:opacity-70 transition"
+                                >
+                                    <Wifi className="w-5 h-5 sm:w-6 sm:h-6" />
+                                </a>
+                            )
+                        )}
+                    </div>
                 </div>
             </div>
         </motion.div>

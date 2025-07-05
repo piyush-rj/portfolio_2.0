@@ -88,7 +88,8 @@ export default function TStack() {
                         <div className="flip-inner w-full h-full rounded-full">
                             {/* Front */}
                             <div
-                                className={`flip-front flex items-center justify-center w-full h-full rounded-full p-4 ${theme === "dark" ? "bg-[#0a0a0a]" : "bg-neutral-300/90"
+                                className={`flip-front flex items-center justify-center w-full h-full rounded-full p-4 
+                                    ${theme === "dark" ? "bg-[#0a0a0a]" : "bg-gray-400"
                                     }`}
                             >
                                 {typeof tech.url === "string" ? (

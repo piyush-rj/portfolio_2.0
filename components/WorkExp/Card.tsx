@@ -27,6 +27,7 @@ export default function Card({
     const logoRef = useRef<HTMLSpanElement>(null);
     const { theme } = useTheme();
 
+
     useEffect(() => {
         if (!techButtonRef.current || !techIconsRef.current || tech.length === 0) return;
 
@@ -149,14 +150,11 @@ export default function Card({
                     <span className={`text-sm ${theme == "dark" ? "text-neutral-400 " : "text-neutral-700"}`}>{duration}</span>
                 </div>
 
-                <div
-                    className="relative flex justify-start mt-4 w-full"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
+                <div className="relative flex justify-start mt-4 w-full">
                     <span
                         ref={techButtonRef}
-                        className="bg-neutral-900/70 text-neutral-200 border border-neutral-700/50 rounded-full px-4 py-1 tracking-wide font-sans cursor-pointer hover:bg-white transition-colors duration-200 relative z-10 text-xs sm:text-sm"
+                        onClick={() => setIsHovered(true)}
+                        className="bg-neutral-900/70 text-neutral-200 border border-neutral-700/50 rounded-full px-4 py-1 tracking-wide font-sans cursor-pointer hover:bg-neutral-800 transition-colors duration-200 relative z-10 text-xs sm:text-sm"
                     >
                         TECH STACK
                     </span>
@@ -177,7 +175,17 @@ export default function Card({
                             </div>
                         ))}
                     </div>
+
+                    {isHovered && (
+                        <button
+                            onClick={() => setIsHovered(false)}
+                            className="absolute -right-2 -top-8 text-xs bg-red-500/70 text-white px-2 py-1 rounded-full z-20 hover:bg-red-500/40 cursor-pointer transition-all duration-200"
+                        >
+                            x
+                        </button>
+                    )}
                 </div>
+
             </div>
         </div>
     );

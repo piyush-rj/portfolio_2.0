@@ -64,3 +64,23 @@ body {
   border-radius: 50%;
   will-change: transform, opacity;
 }
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ios-light-bg {
+  background: linear-gradient(-45deg, #fdfbfb, #ebedee, #f7f8fa, #e0e5ec);
+  background-size: 400% 400%;
+  animation: gradient-move 15s ease infinite;
+}

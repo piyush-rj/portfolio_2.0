@@ -12,21 +12,21 @@ const projects = [
         description: "A Blogging Website",
         image: "/images/bytewords.png",
         githubUrl: "https://github.com/piyush-rj/blog-website",
-        liveUrl: "https://bytewords.vercel.app",
+        liveUrl: "https://bytewords-pi.vercel.app",
     },
     {
         title: "Soldrop",
         description: "Solana Faucet for Devs",
         image: "/images/soldrop.png",
         githubUrl: "https://github.com/piyush-rj/SolDrop",
-        liveUrl: "https://soldrop.dev",
+        liveUrl: "https://soldrop-ashen.vercel.app",
     },
     {
         title: "NexWallet",
         description: "HD-Wallet for devs",
         image: "/images/nexWallet.png",
         githubUrl: "https://github.com/piyush-rj/Wallet-HD",
-        liveUrl: "https://nexwallet.vercel.app",
+        liveUrl: "https://nexwallet-pink.vercel.app",
     },
     {
         title: "PayTM Adv",
@@ -38,8 +38,8 @@ const projects = [
         title: "Portfolio",
         description: "The one you’re looking at",
         image: "/portfolio.png",
-        githubUrl: "https://github.com/yourusername/portfolio",
-        liveUrl: "https://yourportfolio.com",
+        githubUrl: "https://github.com/piyush-rj/portfolio_2.0",
+        liveUrl: "https://piyush-nine-zeta.com",
     },
 ];
 

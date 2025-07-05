@@ -38,16 +38,30 @@ export default function Navbar() {
         const scrolled = self.progress > 0.05;
         gsap.to(nav, {
           backdropFilter: scrolled ? "blur(20px)" : "blur(0px)",
+          backgroundColor:
+            theme === "light"
+              ? scrolled
+                ? "rgba(255, 255, 255, 0.7)"
+                : "transparent"
+              : "transparent",
           boxShadow: scrolled
-            ? "inset 0 0 0 1000px rgba(0, 0, 0, 0.25)"
-            : "inset 0 0 0 0 rgba(0, 0, 0, 0)",
+            ? theme === "dark"
+              ? "inset 0 0 0 1000px rgba(0, 0, 0, 0.25)"
+              : "0 4px 10px rgba(0,0,0,0.05)"
+            : "none",
           borderWidth: scrolled ? "0.5px" : "0px",
-          borderColor: scrolled
-            ? "rgba(255, 255, 255, 0.08)"
-            : "transparent",
+          borderColor:
+            theme === "dark"
+              ? scrolled
+                ? "rgba(255, 255, 255, 0.08)"
+                : "transparent"
+              : scrolled
+                ? "rgba(0, 0, 0, 0.06)"
+                : "transparent",
           duration: 0.3,
           ease: "power2.out",
         });
+
       },
     });
 

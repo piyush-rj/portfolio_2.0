@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTheme } from "@/lib/zustand";
+import Image from "next/image";
+import { GitHub, Prisma } from "@/svgs/allSvg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,12 +23,12 @@ export const logos: Logos[] = [
     { name: "ExpressJS", url: "https://img.icons8.com/?size=100&id=SDVmtZ6VBGXt&format=png" },
     { name: "ReactJS", url: "https://img.icons8.com/?size=100&id=NfbyHexzVEDk&format=png" },
     { name: "NextJS", url: "https://img.icons8.com/?size=100&id=MWiBjkuHeMVq&format=png" },
-    { name: "Prisma ORM", url: "https://img.icons8.com/?size=100&id=aqb9SdV9P8oC&format=png" },
+    { name: "Prisma ORM", url: ( <Prisma width="50" height="50"/>)},
     { name: "MongoDB", url: "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png" },
     { name: "PostgreSQL", url: "https://img.icons8.com/?size=100&id=38561&format=png" },
     { name: "Docker", url: "https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png" },
     { name: "Git", url: "https://img.icons8.com/?size=100&id=20906&format=png" },
-    { name: "GitHub", url: "https://img.icons8.com/?size=100&id=62856&format=png" },
+    { name: "GitHub", url: (<GitHub width="55" height="55" className="text-neutral-500"/>) },
     { name: "Postman", url: "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png" },
     { name: "Turborepo", url: "/Turborepo.svg" },
     { name: "TailwindCSS", url: "/Tailwindcss.svg" },
@@ -90,10 +92,13 @@ export default function TStack() {
                                     }`}
                             >
                                 {typeof tech.url === "string" ? (
-                                    <img
+                                    <Image
+                                        width={30}
+                                        height={30}
                                         src={tech.url}
                                         alt={tech.name}
                                         className="w-full h-full object-contain"
+                                        unoptimized
                                     />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center text-white text-sm">

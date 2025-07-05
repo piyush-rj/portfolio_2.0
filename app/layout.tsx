@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   title: "Piyush Raj — Full Stack Developer",
   description: "Portfolio of Piyush Raj — Building web3, full-stack, and high-performance applications.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/pfp.ico",
+    shortcut: "/pfp.ico",
+    apple: "/pfp.ico",
   },
   openGraph: {
     title: "Piyush Raj — Full Stack Developer",
     description: "Explore projects, skills, and contact info.",
-    url: "https://portfolio-piyush-one.vercel.app",
+    url: "https://piyush-nine-zeta.vercel.app/",
     siteName: "Piyush Raj Portfolio",
     images: [
       {

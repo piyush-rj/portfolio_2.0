@@ -149,7 +149,7 @@ export default function Navbar() {
     <>
       <div
         ref={navRef}
-        className={`sticky font-sans top-6 z-50 bg-transparent transition-all duration-300 flex items-center justify-between font-sans px-6 py-4 sm:px-9 sm:py-6 rounded-xl mt-6 mx-4 ${theme == "dark" ? "text-neutral-500" : "text-neutral-950"}`}
+        className={`sticky font-sans top-6 z-50 bg-transparent transition-all duration-300 flex items-center justify-between px-6 py-4 sm:px-9 sm:py-6 rounded-xl mt-6 mx-4 ${theme == "dark" ? "text-neutral-500" : "text-neutral-950"}`}
       >
         <div className="relative tracking-wider text-[18px] font-medium">
           <span className="relative z-10">PIYUSH RAJ</span>
@@ -181,23 +181,7 @@ export default function Navbar() {
           className={`sm:hidden p-2 rounded-xl cursor-pointer transition duration-200 ${theme === "dark" ? "hover:bg-neutral-900" : "hover:bg-neutral-700"
             }`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-target"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-            <path d="M12 12m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" />
-            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-cube"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M21 16.008v-8.018a1.98 1.98 0 0 0 -1 -1.717l-7 -4.008a2.016 2.016 0 0 0 -2 0l-7 4.008c-.619 .355 -1 1.01 -1 1.718v8.018c0 .709 .381 1.363 1 1.717l7 4.008a2.016 2.016 0 0 0 2 0l7 -4.008c.619 -.355 1 -1.01 1 -1.718z" /><path d="M12 22v-10" /><path d="M12 12l8.73 -5.04" /><path d="M3.27 6.96l8.73 5.04" /></svg>
         </button>
 
       </div>
@@ -218,7 +202,7 @@ export default function Navbar() {
       >
         <div className="p-6 h-full flex flex-col">
           <div className="flex items-center justify-between mb-8">
-            <h2 className={`text-2xl font-bold tracking-wide ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
+            <h2 className={`text-xl font-bold font-sans tracking-wide ${theme === "dark" ? "text-white" : "text-neutral-900"}`}>
               CONNECT WITH ME
             </h2>
             <button
@@ -237,7 +221,7 @@ export default function Navbar() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`social-item flex items-center space-x-4 p-4 rounded-xl transition duration-200 ${theme === "dark"
+                className={`social-item flex items-center space-x-4 p-4 rounded-xl font-sans transition duration-200 ${theme === "dark"
                   ? "hover:bg-neutral-800 text-neutral-300 hover:text-white"
                   : "hover:bg-neutral-100 text-neutral-700 hover:text-neutral-900"
                   }`}

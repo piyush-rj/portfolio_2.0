@@ -33,7 +33,6 @@ const projects = [
         description: "UPI Web-App",
         image: "/images/paytm.png",
         githubUrl: "https://github.com/piyush-rj/paytm-adv"
-        // No github or live URL
     },
     {
         title: "Portfolio",
@@ -68,31 +67,27 @@ export default function Projects() {
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className={`absolute inset-0 z-0 backdrop-blur-2xl ${theme === "dark"
-                        ? "bg-gradient-to-br from-[#1d0530] via-[#0c0c0c] to-[#000]"
-                        : "bg-gradient-to-br from-[#450d708a] via-[#450d708a] to-[#d2d2d2]"
+                    ? "bg-gradient-to-br from-[#1d0530] via-[#0c0c0c] to-[#000]"
+                    : "bg-gradient-to-br from-[#450d708a] via-[#450d708a] to-[#d2d2d2]"
                     }`}
             />
 
             <div
-                className={`relative z-10 font-sans text-white p-6 sm:p-10 rounded-[36px] ${theme === "dark"
-                        ? "bg-black/40 border border-white/10"
-                        : "bg-white/60 border border-black/10 text-black"
+                className={`relative z-10 font-sans text-white p-4 sm:p-6 md:p-10 rounded-[36px] ${theme === "dark"
+                    ? "bg-black/40 border border-white/10"
+                    : "bg-white/60 border border-black/10 text-black"
                     }`}
             >
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
+                <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center mb-6">
                     <span
-                        className={`tracking-wider text-[16px] ${theme == "dark" ? "text-neutral-100" : "text-black"
-                            }`}
+                        className={`tracking-wider text-sm md:text-base ${theme === "dark" ? "text-neutral-100" : "text-black"}`}
                     >
                         PROJECTS
                     </span>
 
-                    <span
-                        className={`text-sm text-right max-w-full sm:max-w-xs line-clamp-2 ${theme == "dark" ? "text-neutral-200" : "text-black"
-                            }`}
-                    >
-                        <span className="font-medium flex items-center gap-2 flex-wrap">
-                            {currentProject.title}
+                    <div className="flex flex-col gap-1 sm:items-end text-sm md:text-base max-w-full sm:max-w-sm">
+                        <div className="flex items-center flex-wrap gap-2 font-medium">
+                            <span>{currentProject.title}</span>
 
                             {currentProject.title !== "PayTM Adv" && (
                                 <>
@@ -101,9 +96,9 @@ export default function Projects() {
                                             href={currentProject.githubUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-inherit hover:opacity-70 transition"
+                                            className="hover:opacity-70 transition"
                                         >
-                                            <Github className="w-4 h-4 inline-block" />
+                                            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </a>
                                     )}
                                     {currentProject.liveUrl && (
@@ -111,16 +106,18 @@ export default function Projects() {
                                             href={currentProject.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-inherit hover:opacity-70 transition"
+                                            className="hover:opacity-70 transition"
                                         >
-                                            <Wifi className="w-4 h-4 inline-block" />
+                                            <Wifi className="w-4 h-4 sm:w-5 sm:h-5" />
                                         </a>
                                     )}
                                 </>
                             )}
+                        </div>
+                        <span className={`${theme === "dark" ? "text-neutral-200" : "text-black"}`}>
+                            {currentProject.description}
                         </span>
-                        {currentProject.description}
-                    </span>
+                    </div>
                 </div>
 
                 <div className="relative w-full flex items-center justify-center">
@@ -156,7 +153,7 @@ export default function Projects() {
                         <img
                             src={currentProject.image}
                             alt={currentProject.title}
-                            className="w-full h-[320px] sm:h-[480px] md:h-[600px] object-cover object-top rounded-[32px] shadow-lg"
+                            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover object-top rounded-[32px] shadow-lg"
                             draggable={false}
                         />
                     </motion.div>

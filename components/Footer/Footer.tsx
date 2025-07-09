@@ -86,7 +86,7 @@ export default function Footer() {
             {/* Resume Link */}
             <a
                 ref={resumeRef}
-                href="https://drive.google.com/file/d/1en9yEjLGL3YAsoZhe9OaTXjVyYCm9Yr4/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1en9yEjLGL3YAsoZhe9OaTXjVyYCm9Yr4/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`px-4 py-2 text-xs sm:text-sm tracking-wider font-mono rounded-full shadow-lg hover:scale-105 transition-transform ${theme == "dark" ? " bg-black text-white" : "bg-neutral-300 text-black"}`}

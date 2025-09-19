@@ -40,6 +40,7 @@ export default function BaseIntro() {
                             alt="oopps"
                             fill
                             className="object-cover"
+                            unoptimized
                         />
                     </div>
                     <span className={`${roboto.className} text-[26px] font-medium tracking-wider flex items-center`}>

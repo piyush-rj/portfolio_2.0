@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, DM_Serif_Display } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const dsd = DM_Serif_Display({
-  weight: "400",
-  style: "normal",
-  subsets: ["latin"]
-});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,18 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Piyush Raj — Full Stack Developer",
-  description: "Portfolio of Piyush Raj — Building web3, full-stack, and high-performance applications.",
+  title: "Piyush - Developer",
+  description: "Portfolio of Piyush Raj",
   icons: {
-    icon: "/pfp.ico",
-    shortcut: "/pfp.ico",
-    apple: "/pfp.ico",
+    icon: '/pfp.ico',
+    shortcut: 'pfp.ico',
+    apple: '/pfp.ico'
   },
   openGraph: {
-    title: "Piyush Raj — Full Stack Developer",
-    description: "Explore projects, skills, and contact info.",
-    url: "https://piyush-nine-zeta.vercel.app/",
-    siteName: "Piyush Raj Portfolio",
+    title: 'Piyush Raj',
+    description: 'Portfolio',
+    url: 'https://piyush-nine-zeta.vercel.app',
+    siteName: 'piyush',
     images: [
       {
         url: "/images/preview.jpg",
@@ -44,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Piyush Raj — Full Stack Developer",
+    title: "Piyush - Developer",
     description: "Explore projects, skills, and contact info.",
     images: ["/images/preview.jpg"],
   },
@@ -58,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dsd.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

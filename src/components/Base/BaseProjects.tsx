@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { MoreIcon } from "@/src/all-svgs/svgs";
 import { Roboto } from "next/font/google"
 
 const roboto = Roboto({
@@ -22,29 +21,21 @@ export default function BaseProjects() {
                     title="ByteWords"
                     image="/projectImages/bytewords.png"
                     url="https://bytewords-pi.vercel.app/"
-                    description="Bytewords is a blogging CRUD app with a minimal dark-themed ui."
-                    descriptionBg="#86600B"
                 />
                 <ProjectCard
                     title="Solax"
                     image="/projectImages/solax.png"
                     url="https://solax-kappa.vercel.app/"
-                    description="A Solana-based token launchpad for developers."
-                    descriptionBg="#927BC9"
                 />
                 <ProjectCard
                     title="Grid64"
                     image="/projectImages/grid64.png"
                     url="https://github.com/piyush-rj/grid64"
-                    description="Grid64 is a chess app, which is scalable and fast. Thanks to redis!"
-                    descriptionBg="#26807A"
                 />
                 <ProjectCard
                     title="Paygen"
                     image="/projectImages/paygen.png"
                     url="https://github.com/piyush-rj/paytm-adv"
-                    description="A PayTM clone run by a webhook server"
-                    descriptionBg="#3178C6"
                 />
             </div>
         </div>
@@ -54,12 +45,10 @@ export default function BaseProjects() {
 interface ProjectCardProps {
     image: string;
     title: string;
-    description?: string;
     url?: string;
-    descriptionBg?: string;
 }
 
-export function ProjectCard({ title, description, descriptionBg, image, url }: ProjectCardProps) {
+export function ProjectCard({ title, image, url }: ProjectCardProps) {
     const [activePanel, setActivePanel] = useState<boolean>(false);
 
     return (
@@ -81,25 +70,6 @@ export function ProjectCard({ title, description, descriptionBg, image, url }: P
                     {title}
                 </div>
             </Link>
-
-            <div
-                onClick={(e) => {
-                    e.stopPropagation();
-                    setActivePanel((prev) => !prev);
-                }}
-                className="absolute top-2 right-2 text-neutral-200 bg-neutral-950/80 hover:scale-105 hover:bg-neutral-950 flex items-center cursor-pointer rounded-md p-1 transition-all transform duration-200"
-            >
-                <MoreIcon width="20" height="20" />
-            </div>
-
-            {activePanel && (
-                <div
-                    style={{ backgroundColor: descriptionBg }}
-                    className="absolute top-10 right-9 w-[200px] text-neutral-950 rounded-[14px] rounded-tr-none shadow-sm shadow-neutral-950 p-4 z-20 animate-in slide-in-from-top-2 duration-300"
-                >
-                    <p className={`text-md tracking-wide leading-relaxed ${roboto.className}`}>{description}</p>
-                </div>
-            )}
 
         </div>
     );

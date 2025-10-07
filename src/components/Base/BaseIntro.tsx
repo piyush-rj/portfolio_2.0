@@ -46,7 +46,7 @@ export default function BaseIntro() {
                     <span className={`${roboto.className} text-[26px] font-medium tracking-wider flex items-center`}>
                         piyush
                         <a
-                            href="https://drive.google.com/file/d/1hQKK_Luxhr_pJ9zuv4NOoi9h41guRk9T/view?usp=sharing"
+                            href="https://drive.google.com/file/d/15cXd1wVXR77QURGNR6GTyNPy-46BTMWc/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="-rotate-45"

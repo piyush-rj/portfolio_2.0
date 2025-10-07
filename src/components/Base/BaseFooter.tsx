@@ -19,7 +19,7 @@ export default function BaseFooter() {
 
             <div className="flex gap-x-3.5 items-center text-neutral-300/80 ml-auto">
                 <a
-                    href="https://drive.google.com/file/d/1hQKK_Luxhr_pJ9zuv4NOoi9h41guRk9T/view?usp=sharing"
+                    href="https://drive.google.com/file/d/15cXd1wVXR77QURGNR6GTyNPy-46BTMWc/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="-rotate-45"

@@ -1,76 +1,32 @@
-'use client'
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { Roboto } from "next/font/google"
-
-const roboto = Roboto({
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-    subsets: ["latin"],
-})
+import WorkspaceCard from "@/src/utility/WorkspaceCard";
 
 export default function BaseProjects() {
     return (
-        <div className="w-full flex flex-col mt-15 overflow-hidden">
-            <span className="text-[19px] tracking-wider font-light text-[#858585]">
+        <div className="w-full flex flex-col overflow-hidden">
+            <span className=" md:text-[22px] font-sans tracking-wider text-neutral-300 glow-text">
                 Cool Stuff
             </span>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
-                <ProjectCard
-                    title="ByteWords"
-                    image="/projectImages/bytewords.png"
-                    url="https://bytewords-pi.vercel.app/"
+            <div className="flex flex-col space-y-14 md:space-y-40 mt-4">
+                <WorkspaceCard
+                    title="Winterfell"
+                    description="AI powered smart contract generator"
+                    imageUrl="/projectImages/winterfell.jpg"
+                    redirectLink="https://github.com/bottle-nex/winterfell"
                 />
-                <ProjectCard
-                    title="Solax"
-                    image="/projectImages/solax.png"
-                    url="https://solax-kappa.vercel.app/"
+                <WorkspaceCard
+                    title="Nocturn"
+                    description="A quiz application with crypto staking"
+                    imageUrl="/projectImages/nocturn.jpg"
+                    redirectLink="https://github.com/celestium-x/nocturn"
                 />
-                <ProjectCard
+                <WorkspaceCard
                     title="Grid64"
-                    image="/projectImages/grid64.png"
-                    url="https://github.com/piyush-rj/grid64"
-                />
-                <ProjectCard
-                    title="Paygen"
-                    image="/projectImages/paygen.png"
-                    url="https://github.com/piyush-rj/paytm-adv"
+                    description="A real-time chess applcation"
+                    imageUrl="/projectImages/grid64.png"
+                    redirectLink="https://github.com/piyush-rj/grid64"
                 />
             </div>
-        </div>
-    );
-}
-
-interface ProjectCardProps {
-    image: string;
-    title: string;
-    url?: string;
-}
-
-export function ProjectCard({ title, image, url }: ProjectCardProps) {
-    const [activePanel, setActivePanel] = useState<boolean>(false);
-
-    return (
-        <div className="relative w-full">
-            <Link
-                href={url || "#"}
-                target="_blank"
-                className="h-[220px] w-full relative overflow-hidden shadow-xl rounded-xl hover:-translate-y-[2px] transition-all transform duration-300 group block"
-            >
-                <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover"
-                    unoptimized
-                />
-
-                <div className="absolute bottom-3.5 left-3.5 bg-neutral-300/90 text-neutral-800 px-3 py-0.5 rounded-[10px] flex items-center gap-0.5 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {title}
-                </div>
-            </Link>
-
         </div>
     );
 }

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 export default function BaseIntro() {
 
     return (
-        <div className={cn('w-full font-sans dark:bg-clip-text dark:text-transparent flex flex-col py-4',
+        <div className={cn('w-full font-sans dark:bg-clip-text dark:text-transparent flex flex-col py-4 pt-12',
             'dark:bg-gradient-to-br dark:from-neutral-200 dark:via-neutral-300/80 dark:to-transparent',
             'md:text-7xl text-2xl font-semibold gap-y-2 text-neutral-600'
         )}>

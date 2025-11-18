@@ -7,7 +7,7 @@ export default function BaseProjects() {
                 Cool Stuff
             </span>
 
-            <div className="flex flex-col space-y-14 md:space-y-40 mt-4">
+            <div className="flex flex-col space-y-2 md:space-y-40 mt-4">
                 <WorkspaceCard
                     title="Winterfell"
                     description="AI powered smart contract generator"

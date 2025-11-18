@@ -6,11 +6,11 @@ import BaseTechStack from "./Base/BaseTechStack";
 
 export default function HomeMain() {
     return (
-        <div className="w-full px-6 md:px-0 md:max-w-6xl custom-scrollbar pt-20 md:pt-40 flex flex-col gap-y-15">
+        <div className="w-full px-6 md:px-0 md:max-w-6xl custom-scrollbar pt-20 md:pt-40 flex flex-col md:gap-y-15 gap-y-8">
             <BaseIntro/>
-            {/* <BaseTechStack/> */}
             <BaseProjects/>
             <BaseCareers/>
+            <BaseTechStack/>
         </div>
     )
 }

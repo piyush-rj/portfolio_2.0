@@ -5,12 +5,12 @@ export default function BaseIntro() {
     return (
         <div className={cn('w-full font-sans dark:bg-clip-text dark:text-transparent flex flex-col py-4 pt-12',
             'dark:bg-gradient-to-br dark:from-neutral-200 dark:via-neutral-300/80 dark:to-transparent',
-            'md:text-7xl text-2xl font-semibold gap-y-2 text-neutral-600'
+            'md:text-7xl text-[23px] leading-7 md:leading-18 font-semibold gap-y-2 text-neutral-600'
         )}>
-            <div className="glow-text">
+            <div className="glow-text [animation-delay:0.15s]">
                 I design interfaces
             </div>
-            <div className="glow-text">
+            <div className="glow-text [animation-delay:0.15s]">
                 and build interactions.
             </div>
             <div className="text-sm md:text-xl mt-1 md:mt-5 text-neutral-700 dark:text-neutral-400 font-normal gap-x-2">

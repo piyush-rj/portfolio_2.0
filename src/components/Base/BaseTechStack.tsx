@@ -44,22 +44,22 @@ type TechStackCardProps = {
 export function TechStackCard({ name, imgUrl, type, icon, className }: TechStackCardProps) {
     return (
         <div className="flex items-center gap-x-3 shadow-xl hover:-translate-y-[2px] transition-transform duration-200 bg-white/5 rounded-md p-2 px-2.5 justify-between">
-            <div className="relative w-5 h-5 md:w-7 md:h-7">
+            <div className="relative w-4 h-4 md:w-7 md:h-7">
             {(type === 'image' && imgUrl) ? (
                 <Image
                     src={imgUrl}
                     alt={name}
                     fill
-                    className="object-cover rounded-lg md:rounded-xs"
+                    className="object-cover rounded-xs md:rounded-xs"
                     unoptimized
                 />
             ): (
-                <span className={`${className} h-5 w-5 pt-px`}>
+                <span className={`${className} h-3 w-3 md:h-5 md:w-5 pt-px`}>
                     {icon}
                 </span>
             )}    
             </div>
-            <div className="text-sm md:text-sm tracking-wider text-primary-light font-medium">{name}</div>
+            <div className="text-xs md:text-sm tracking-wider text-primary-light font-medium">{name}</div>
         </div>
     )
 }

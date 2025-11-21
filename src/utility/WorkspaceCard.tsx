@@ -37,7 +37,7 @@ export default function WorkspaceCard({
             }}
             className={cn(
                 'md:h-[80vh] h-[40vh] w-full rounded-3xl overflow-hidden p-1.5 md:p-3 min-h-[96%]',
-                'border relative shadow-2xl',
+                'border relative shadow-2xl fade-in-up',
                 className,
             )}
         >
@@ -47,7 +47,7 @@ export default function WorkspaceCard({
                 onClick={handleRedirect}
                 className={cn(
                     'h-full w-full rounded-xl border border-neutral-800 group-hover:border-neutral-700 overflow-hidden',
-                    'p-5 md:p-8 flex flex-col gap-y-10 relative items-center',
+                    'p-5 md:p-8 flex flex-col gap-y-20 relative items-center',
                     'bg-linear-to-br from-neutral-900 via-neutral-800/40 to-neutral-900',
                     'group tracking-wide',
                     'cursor-pointer'

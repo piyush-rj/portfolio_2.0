@@ -1,10 +1,16 @@
 'use client';
-import { useRouter } from "next/navigation";
 import { PiCopyrightLight } from "react-icons/pi";
+import { RefObject } from "react";
+import { useScroll } from "@/src/contexts/ScrollContext";
 
 export default function BaseFooter() {
+    const { introRef, projectsRef, careersRef } = useScroll();
 
-    const router = useRouter();
+    const scrollToSection = (ref: RefObject<HTMLDivElement | null> | null) => {
+        if (ref?.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <div className="w-screen max-w-screen border-t md:h-[40vh] mt-10 md:mt-30 font-sans tracking-normal flex">
@@ -12,27 +18,30 @@ export default function BaseFooter() {
 
                 <div className="flex flex-col gap-y-3 text-neutral-300 text-[14px]">
                     <div className="text-neutral-400/80 text-[12px] tracking-wide">MAIN</div>
-
-                    <div
-                        onClick={() => router.push('/about')}
-                        className="mt-2 cursor-pointer hover:text-primary-blue transition-colors duration-250"
+                    <button
+                        onClick={() => scrollToSection(introRef)}
+                        className="mt-2 cursor-pointer hover:text-primary-blue transition-colors duration-250 text-left"
                     >
                         About
-                    </div>
-
-                    <div
-                        onClick={() => router.push('/projects')}
-                        className="cursor-pointer hover:text-primary-blue transition-colors duration-250"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection(projectsRef)}
+                        className="cursor-pointer hover:text-primary-blue transition-colors duration-250 text-left"
                     >
                         Projects
-                    </div>
-
-                    <div
-                        onClick={() => router.push('/role')}
-                        className="cursor-pointer hover:text-primary-blue transition-colors duration-250"
+                    </button>
+                    <button
+                        onClick={() => scrollToSection(careersRef)}
+                        className="cursor-pointer hover:text-primary-blue transition-colors duration-250 text-left"
                     >
-                        Role
-                    </div>
+                        Roles
+                    </button>
+                    <button
+                        onClick={() => scrollToSection(careersRef)}
+                        className="cursor-pointer hover:text-primary-blue transition-colors duration-250 text-left"
+                    >
+                        Tech Stack
+                    </button>
                 </div>
 
                 <div className="flex flex-col gap-y-3 text-neutral-300 text-[14px]">
@@ -41,6 +50,7 @@ export default function BaseFooter() {
                     <a
                         href="https://www.linkedin.com/in/piyush-raj-07a318260"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-2 cursor-pointer hover:text-primary-blue transition-colors duration-250"
                     >
                         LinkedIn
@@ -49,6 +59,7 @@ export default function BaseFooter() {
                     <a
                         href="https://x.com/PiyushC2P"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="cursor-pointer hover:text-primary-blue transition-colors duration-250"
                     >
                         Twitter
@@ -61,6 +72,7 @@ export default function BaseFooter() {
                     <a
                         href="https://github.com/piyush-rj"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-2 cursor-pointer hover:text-primary-blue transition-colors duration-250"
                     >
                         GitHub
@@ -69,6 +81,7 @@ export default function BaseFooter() {
                     <a
                         href="https://drive.google.com/file/d/1coJXUdXbhVRba007p6ucb8fZYAoWMQHT/view?usp=sharing"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="cursor-pointer hover:text-primary-blue transition-colors duration-250"
                     >
                         Resume
@@ -77,21 +90,19 @@ export default function BaseFooter() {
 
                 <div className="md:hidden block flex w-full gap-y-3 text-neutral-300 text-[14px]">
                     <div className="flex items-center gap-x-1 text-neutral-300 tracking-wide font-sans">
-                    <span><PiCopyrightLight /></span>
-                    2025 Piyush Raj. All Rights Reserved.
-                </div>
-
+                        <span><PiCopyrightLight /></span>
+                        2025 Piyush Raj. All Rights Reserved.
+                    </div>
                 </div>
 
             </div>
 
-            <div className="hidden md:block w-full h-full pt-40 flex justify-end items-end ">
+            <div className="hidden md:block w-full h-full pt-40 flex justify-end items-end">
                 <div className="flex items-center justify-end pr-20 gap-x-1 text-neutral-300 tracking-wide font-sans">
                     <span><PiCopyrightLight /></span>
                     2025 Piyush Raj. All Rights Reserved.
                 </div>
             </div>
-
         </div>
     );
 }

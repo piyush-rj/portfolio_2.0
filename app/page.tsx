@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import BaseFooter from "@/src/components/Base/BaseFooter";
 import HomeMain from "@/src/components/HomeMain";
 import MainNavbar from "@/src/components/nav/MainNavbar";
+import { AnimatedThemeToggler } from "@/src/components/ui/animated-theme-toggler";
 
 export default function Home() {
 
@@ -22,6 +23,9 @@ export default function Home() {
       <HomeMain
       />
       <BaseFooter />
+      <div className="fixed bottom-5 right-5 border h-10 w-10 flex justify-center items-center rounded-full bg-[#0d0e0f] border-neutral-800">
+        <AnimatedThemeToggler />
+      </div>
     </div>
   );
 }

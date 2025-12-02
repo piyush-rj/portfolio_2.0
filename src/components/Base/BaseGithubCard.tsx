@@ -5,7 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function BaseGithubCard() {
   const cyanTheme = {
-    dark: ["#0A0F12", "#0E4A52", "#0FB0C0", "#38DFF0", "#6AFFFF"],
+    dark: [
+    "#161B22", // empty
+    "#262B31", // low  (darker than #2E343B)
+    "#5D646A", // mid
+    "#A4A9AD", // medium-high
+    "#C6C4C2"  // high
+  ],
     light: ["#E8FBFF", "#A8F4FF", "#6EEBFF", "#31DAF0", "#00CFE3"],
   };
 
@@ -43,13 +49,14 @@ export default function BaseGithubCard() {
         </span>
       </div>
 
-      <div className="mt-5 p-4 rounded-lg border border-neutral-800 bg-[#111] overflow-x-auto">
+      <div className="mt-5 p-4 rounded-sm border border-neutral-800 bg-[#111] overflow-x-auto">
         <div className="min-w-max">
           <GitHubCalendar
             username="piyush-rj"
             theme={cyanTheme}
             blockSize={blockSize}
             blockMargin={blockMargin}
+            blockRadius={1}
             fontSize={fontsize}
             colorScheme="dark"
           />

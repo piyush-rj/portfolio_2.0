@@ -18,6 +18,13 @@ export const AnimatedThemeToggler = ({
   const [isDark, setIsDark] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
+  // ---- SOUND ----
+  const playSound = useCallback(() => {
+    const audio = new Audio("/sounds/click.mp3")
+    audio.volume = 1
+    audio.play().catch(() => {})
+  }, [])
+
   useEffect(() => {
     const updateTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"))
@@ -48,6 +55,7 @@ export const AnimatedThemeToggler = ({
 
     const { top, left, width, height } =
       buttonRef.current.getBoundingClientRect()
+
     const x = left + width / 2
     const y = top + height / 2
     const maxRadius = Math.hypot(
@@ -73,11 +81,12 @@ export const AnimatedThemeToggler = ({
   return (
     <button
       ref={buttonRef}
-      onClick={toggleTheme}
+      onPointerDown={playSound}   // ⭐ SOUND PLAYS INSTANTLY
+      onClick={toggleTheme}       // theme toggles after audio already fired
       className={cn(className)}
       {...props}
     >
-      {isDark ? <Sun className="size-4.5" /> : <Moon className="size-4.5"/>}
+      {isDark ? <Sun className="size-4.5" /> : <Moon className="size-4.5" />}
       <span className="sr-only">Toggle theme</span>
     </button>
   )

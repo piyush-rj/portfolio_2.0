@@ -1,4 +1,5 @@
 import { RiGithubFill, RiTwitterXFill } from "react-icons/ri";
+import { BsLink45Deg } from "react-icons/bs";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 
 export default function MainNavbar() {
@@ -8,6 +9,12 @@ export default function MainNavbar() {
                 PIYUSH RAJ
             </div>
             <div className="flex-1 flex justify-end items-center gap-x-3 sm:gap-x-4 md:gap-x-5 text-[15px] text-neutral-700 dark:text-neutral-300/90">
+                <a 
+                    href="https://drive.google.com/file/d/1coJXUdXbhVRba007p6ucb8fZYAoWMQHT/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer"
+                    className="dark:hover:text-neutral-200 hover:text-neutral-800 transition-colors hover:bg-neutral-300 dark:hover:bg-neutral-900 p-[3px] rounded-sm">
+                    <BsLink45Deg  className="size-4 sm:size-4.5" />
+                </a>
                 <a href="https://x.com/PiyushC2P" target="_blank" rel="noopener noreferrer"
                     className="dark:hover:text-neutral-200 hover:text-neutral-800 transition-colors hover:bg-neutral-300 dark:hover:bg-neutral-900 p-[3px] rounded-sm">
                     <RiTwitterXFill className="size-4 sm:size-4.5" />

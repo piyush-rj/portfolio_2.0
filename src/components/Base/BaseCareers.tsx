@@ -8,7 +8,7 @@ export default function BaseCareers() {
             <div className={`mt-5 mb-10 flex flex-col space-y-2`}>
                 <span className=" md:text-[18px] space-x-4 text-neutral-400 md:flex">
                     Fullstack developer{" "}
-                    <span className="italic text-primary-blue">@Wallpaper-Heaven</span>
+                    <span className="italic text-primary-blue pl-1">@Wallpaper-Heaven</span>
                     <span className="text-[12px] md:text-[13px] text-neutral-400">
                         ( May&apos;25 - June&apos;25 )
                     </span>

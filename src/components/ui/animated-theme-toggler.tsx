@@ -11,7 +11,8 @@ interface AnimatedThemeTogglerProps
 }
 
 export const AnimatedThemeToggler = ({
-  className,
+  className,git push origin fix-issue-16043 --force
+
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
